@@ -5,5 +5,12 @@
 
 ***
 
+## Previous similar projects
+
+### [Endless Piano](https://github.com/asigalov61/Endless-Piano)
+### [Matchmaker](https://github.com/asigalov61/Matchmaker)
+
+***
+
 ### Project Los Angeles
 ### Tegridy Code 2024

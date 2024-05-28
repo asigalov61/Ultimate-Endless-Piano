@@ -343,6 +343,7 @@ for j in notebook.tqdm_notebook(range(num_tries)):
   previous_idxs.append(src_idx)
 
   counter = 0
+  match_ratios = [0]
 
   for i in range(num_chords):
 
@@ -378,14 +379,14 @@ for j in notebook.tqdm_notebook(range(num_tries)):
           print('Failed to find good match!!!')
           print('Retrying...')
           print('=' * 70)
-          break
+        break
 
     else:
       if verbose:
         print('Failed to find good match!!!')
         print('Retrying...')
         print('=' * 70)
-        break
+      break
 
   if counter == num_chords:
     if verbose:
@@ -500,5 +501,9 @@ if max(match_ratios) < max_overfit_ratio:
     display(Audio(midi_audio, rate=16000, normalize=False))
 
   TMIDIX.plot_ms_SONG(song_f, plot_title=fname)
+
+else:
+  print('Nothing to display!')
+  print('Please try again...')
 
 """# Congrats! You did it! :)"""

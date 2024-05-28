@@ -343,7 +343,7 @@ for j in notebook.tqdm_notebook(range(num_tries)):
   previous_idxs.append(src_idx)
 
   counter = 0
-  match_ratios = [1]
+  match_ratios = [0]
 
   for i in range(num_chords):
 
@@ -394,7 +394,7 @@ for j in notebook.tqdm_notebook(range(num_tries)):
       print('Checking...')
       print('=' * 70)
 
-    match_ratios = [1]
+    match_ratios = [0]
     tqdmdis = not verbose
     nchords = cp.array(new_chords)
 
@@ -426,7 +426,7 @@ for j in notebook.tqdm_notebook(range(num_tries)):
           print('=' * 70)
         break
 
-    if max(match_ratios) < max_overfit_ratio:
+    if 0 < max(match_ratios) <= max_overfit_ratio:
       if verbose:
         print('Found good match!')
         print('Overfit ratio:', max(match_ratios))
@@ -444,7 +444,7 @@ print('=' * 70)
 
 #===============================================================================
 
-if max(match_ratios) < max_overfit_ratio:
+if 0 < max(match_ratios) < max_overfit_ratio:
 
   if not verbose:
     print('Found good match!')

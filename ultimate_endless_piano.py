@@ -343,7 +343,7 @@ for j in notebook.tqdm_notebook(range(num_tries)):
   previous_idxs.append(src_idx)
 
   counter = 0
-  match_ratios = [0]
+  match_ratios = [1]
 
   for i in range(num_chords):
 
@@ -394,7 +394,7 @@ for j in notebook.tqdm_notebook(range(num_tries)):
       print('Checking...')
       print('=' * 70)
 
-    match_ratios = [0]
+    match_ratios = [1]
     tqdmdis = not verbose
     nchords = cp.array(new_chords)
 
@@ -505,5 +505,6 @@ if max(match_ratios) < max_overfit_ratio:
 else:
   print('Nothing to display!')
   print('Please try again...')
+  print('=' * 70)
 
 """# Congrats! You did it! :)"""
